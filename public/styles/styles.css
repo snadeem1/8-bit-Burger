@@ -16,7 +16,6 @@ background-size: cover;
   float: left;
   overflow:scroll;
   height: 600px;
-  
 
 
 }
@@ -28,15 +27,4 @@ background-size: cover;
 
 .foodSection {
   float: left;
-}
-
-img{
-  width: 60px;
-  height: 60px;
-  padding-top: 10px;
-}
-
-.logo{
-  width: 800px;
-  height: 200px;
 }

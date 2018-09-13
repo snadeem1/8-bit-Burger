@@ -33,4 +33,3 @@ var sequelize = new sequelize("burger_bitdb", "root", "gwbootcamp",{
   }
 
 module.exports = sequelize;
-

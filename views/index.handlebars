@@ -27,16 +27,16 @@
                   {{#each data.meats}}
                     {{#unless this.chosen}}
                     <!-- <li> -->
+
                 <p><span class="label"></span> <img src="{{this.image}}"/></p>
                 <p><span class="label"></span> {{this.product}}</p>
                 <p><span class="label">Price:</span> {{this.price}}</p>
                 <div id="chosenButton" class="text-center">
-            <form method="POST" action="/burgers/update?_method=PUT"
-            class="button-size">
-              <input type="hidden" name="id" type="text"
+            <form class="button-size">
+              <input type="hidden" name="id"
               value={{this.id}}>
               <br>
-              <button type="submit" class="btn btn-default text-center">
+              <button data-value="{{this.id}}" data-table="meat" type="submit" class="btn btn-default text-center mysubmit">
               Select It!</button>
             </form>
           </div>
@@ -60,17 +60,18 @@
                 {{#each data.buns}}
                   {{#unless this.chosen}}
                   <!-- <li> -->
+
               <p><span class="label"></span> <img src="{{this.image}}"/></p>
               <p><span class="label"></span> {{this.product}}</p>
               <p><span class="label">Price:</span> {{this.price}}</p>
               <div id="chosenButton" class="text-center">
           <form method="POST" action="/burgers/update?_method=PUT"
           class="button-size">
-            <input type="hidden" name="id" type="text"
+            <inputname="id" type="hidden"
             value={{this.id}}>
             <br>
-            <button type="submit" class="btn btn-default text-center">
-            Select It!</button>
+              <button data-value="{{this.id}}" data-table="buns" type="submit" class="btn btn-default text-center mysubmit">
+              Select It!</button>
           </form>
         </div>
 
@@ -100,11 +101,11 @@
               <div id="chosenButton" class="text-center">
           <form method="POST" action="/burgers/update?_method=PUT"
           class="button-size">
-            <input type="hidden" name="id" type="text"
+            <input type="hidden" name="id" 
             value={{this.id}}>
             <br>
-            <button type="submit" class="btn btn-default text-center">
-            Select It!</button>
+             <button data-value="{{this.id}}" data-table="cheeses" type="submit" class="btn btn-default text-center mysubmit">
+              Select It!</button>
           </form>
         </div>
 
@@ -132,12 +133,12 @@
                 <p><span class="label"></span> {{this.product}}</p>
                 <p><span class="label">Price:</span> {{this.price}}</p>
                 <div id="chosenButton" class="text-center">
-            <form method="POST" action="/burgers/update?_method=PUT"
+            <form 
             class="button-size">
-              <input type="hidden" name="id" type="text"
+              <input type="hidden" name="id" 
               value={{this.id}}>
               <br>
-              <button type="submit" class="btn btn-default text-center">
+               <button data-value="{{this.id}}" data-table="veggies" type="submit" class="btn btn-default text-center mysubmit">
               Select It!</button>
             </form>
           </div>
@@ -166,12 +167,12 @@
                 <p><span class="label"></span> {{this.product}}</p>
                 <p><span class="label">Price:</span> {{this.price}}</p>
                 <div id="chosenButton" class="text-center">
-            <form method="POST" action="/burgers/update?_method=PUT"
+            <form 
             class="button-size">
-              <input type="hidden" name="id" type="text"
+              <input type="hidden" name="id" 
               value={{this.id}}>
               <br>
-              <button type="submit" class="btn btn-default text-center">
+              <button data-value="{{this.id}}" data-table="sides" type="submit" class="btn btn-default text-center mysubmit">
               Select It!</button>
             </form>
           </div>
@@ -202,10 +203,10 @@
                 <div id="chosenButton" class="text-center">
             <form method="POST" action="/burgers/update?_method=PUT"
             class="button-size">
-              <input type="hidden" name="id" type="text"
+              <input type="hidden" name="id" 
               value={{this.id}}>
               <br>
-              <button type="submit" class="btn btn-default text-center">
+             <button data-value="{{this.id}}" data-table="drinks" type="submit" class="btn btn-default text-center mysubmit">
               Select It!</button>
             </form>
           </div>
@@ -234,12 +235,11 @@
                 <p><span class="label"></span> {{this.product}}</p>
                 <p><span class="label">Price:</span> {{this.price}}</p>
                 <div id="chosenButton" class="text-center">
-            <form method="POST" action="/burgers/update?_method=PUT"
-            class="button-size">
-              <input type="hidden" name="id" type="text"
+            <form  class="button-size">
+              <input type="hidden" name="id" 
               value={{this.id}}>
               <br>
-              <button type="submit" class="btn btn-default text-center">
+             <button data-value="{{this.id}}" data-table="meat" type="submit" class="btn btn-default text-center mysubmit">
               Select It!</button>
             </form>
           </div>
@@ -271,6 +271,22 @@
   <center>
       <h4 class="sub-heading">Receipt</h4>
     </center>
+    <div>
+
+         <table id="results">
+      <thead>
+        <tr>
+          <th id="price">Price</th>
+          <th id="product">Product</th>
+          
+ 
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Results from DB here -->
+      </tbody>
+    </table>
+    </div>
       <div id="already_eaten">
 <br>
         <!-- Dynamically Insert Eaten Burgers Here -->

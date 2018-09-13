@@ -3,6 +3,7 @@ var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+var $mysubmit = $(".mysubmit");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -26,6 +27,12 @@ var API = {
     return $.ajax({
       url: "api/examples/" + id,
       type: "DELETE"
+    });
+  },
+  addRecipes: function(table,id) {
+    return $.ajax({
+      url: "api/addRecipe",
+      type: "GET"
     });
   }
 };
@@ -94,6 +101,33 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+
+var handleMySubmit = function(event) {
+  event.preventDefault();
+  var idToSubmit = $(this).attr("data-value");
+  var tableToSubmit = $(this).attr("data-table");
+
+  $.ajax("/api/addRecipe/" + idToSubmit + "/" + tableToSubmit, {
+    type: "GET"
+
+}).then(
+    function(data){
+   
+
+      $("tbody").append("<tr><td>" + data[0].price + "</td>" +
+      "<td>" + data[0].product + "</td>" +
+      "<td>" + "<img src='" + data[0].image + "'/>" + "</td>" +
+      "<td>" + "<button id='btn" + data[0].id + "'>Delete</button>" + "</td>" +
+    "</tr>");
+
+    }
+);
+ 
+
+};
+
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+$mysubmit.on("click",  handleMySubmit);

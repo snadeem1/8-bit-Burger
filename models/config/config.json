@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "gwbootcamp",
+    "password": "password",
     "database": "burger_bitdb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "gwbootcamp",
+    "password": "password",
     "database": "burger_bitdb",
     "host": "localhost",
     "dialect": "mysql",
@@ -16,11 +16,5 @@
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql",
-    "host":	"bbj31ma8tye2kagi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "username": "p6gr26cyqi66ftmj",
-    "password": "t55rnukpbbytoww0",
-    "database": "dmdmd54pl23w23ol"
-
+    "dialect": "mysql"
   }
-}
